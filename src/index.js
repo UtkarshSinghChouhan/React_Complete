@@ -12,13 +12,32 @@ import ReactDOM from 'react-dom';
 
 
 
-
+// .heading{
+//     color: #fa9191;
+//     text-align: center;
+//     text-transform: capitalize;
+//     font-weight: bold;
+//     box-shadow: 0 2px 4px #ffe9c5;
+//     margin: 50px;
+//     font-family: 'Josefin Sans', sans-serif;
+//   }
 
 
 // =========== JavaScript expression in JSX ===================
 
 const myName = 'Utkarsh Singh';
 const lastName = 'Chouhan';
+
+// In react we add inline CSS by making an object
+const heading = {
+    color: '#fa9191',
+    textTransform: 'capitalize',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    boxShadow: '0 2px 4px #ffe9c5',
+    margin: '50px',
+    fontFamily: "'Josefin Sans', sans-serif"
+}
 
 
 
@@ -28,7 +47,7 @@ const link = 'https://www.youtube.com/watch?v=cKOegEuCcfw';
 ReactDOM.render(
   <>
   <div>
-    <h1 className="heading">My name is {myName + " " + lastName}</h1>
+    <h1 style={heading}>My name is {myName + " " + lastName}</h1>
   </div>
 
 
