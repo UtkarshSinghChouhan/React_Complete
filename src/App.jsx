@@ -1,40 +1,21 @@
-import React from "react";
+const myName = 'Utkarsh Singh Chouhan';
 
-function App(){
+const favProgram = 'React JS';
 
-    // For Inline-CSS
-    const styling = {
-        color: " "
-    };
 
-    let date = new Date();
-    date = date.getHours();
-    let greeting = "";
-
-    if(date >= 1 && date < 12){
-        greeting = "Good Morning";
-
-        // Dynamically assigning the CSS
-        styling.color = "green"
-    }
-
-    else if(date >= 12 && date < 19){
-        greeting = "Good Afternoon"
-
-        // Dynamically assigning the CSS
-        styling.color = "Orange"
-    }
-
-    else{
-        greeting = "Good Night"
-
-        // Dynamically assigning the CSS
-        styling.color = "Blue"
-    } 
-
-    return (
-        <h1>Hello Sir, <span style={styling}> {greeting} </span></h1>
-    );
+function favYoutuber(){
+    return("David dobrik");
 }
 
-export default App;
+function favYoutuber2(){
+
+    let name1 = "Mark Rober";
+
+    return name1;
+}
+
+
+// Here we are exporting a single data, hence instead of exporting 'App' we need to write 'myname'
+export default myName;
+
+export {favProgram, favYoutuber, favYoutuber2};
