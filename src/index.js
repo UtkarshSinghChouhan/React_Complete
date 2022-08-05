@@ -1,67 +1,41 @@
-//======= Importing CSS ==========
-import "./index.css";
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css"
 
 
-// Some of important modules we need
+// For Inline-CSS
+const styling = {
+  color: " "
+};
 
-// var React = `require('react');
-import React from 'react';
+let date = new Date();
+date = date.getHours();
+let greeting = "";
 
-// var ReactDOM = require('react-dom')
-import ReactDOM from 'react-dom';
+if(date >= 1 && date < 12){
+  greeting = "Good Morning";
 
-
-
-// .heading{
-//     color: #fa9191;
-//     text-align: center;
-//     text-transform: capitalize;
-//     font-weight: bold;
-//     box-shadow: 0 2px 4px #ffe9c5;
-//     margin: 50px;
-//     font-family: 'Josefin Sans', sans-serif;
-//   }
-
-
-// =========== JavaScript expression in JSX ===================
-
-const myName = 'Utkarsh Singh';
-const lastName = 'Chouhan';
-
-// In react we add inline CSS by making an object
-const heading = {
-    color: '#fa9191',
-    textTransform: 'capitalize',
-    textAlign: 'center',
-    fontWeight: 'bold',
-    boxShadow: '0 2px 4px #ffe9c5',
-    margin: '50px',
-    fontFamily: "'Josefin Sans', sans-serif"
+  // Dynamically assigning the CSS
+  styling.color = "green"
 }
 
+else if(date >= 12 && date < 19){
+  greeting = "Good Afternoon"
 
+  // Dynamically assigning the CSS
+  styling.color = "Orange"
+}
 
-const image = 'https://media4.giphy.com/media/sEN7huyD6NwFRhi2ZT/200.gif?cid=95b279445844639e237830031c47d51a3880003b3b7e2164&rid=200.gif&ct=g';
-const link = 'https://www.youtube.com/watch?v=cKOegEuCcfw';
+else{
+  greeting = "Good Night"
+
+  // Dynamically assigning the CSS
+  styling.color = "Blue"
+}
 
 ReactDOM.render(
-  <>
-  <div>
-    <h1 style={heading}>My name is {myName + " " + lastName}</h1>
-  </div>
-
-
-
-
-    <div className="img_div">
-      <img src={image} alt='not available'/>
-      <img src={image} alt='not available'/>
-      <a href={link} target='_utkarsh'> <img src={image} alt='utkarsh'/></a>
-    </div>
-
-
-
+  <>  
+  <h1>Hello Sir, <span style={styling}> {greeting} </span></h1>
   </>,
-  
   document.getElementById('root')
 );
