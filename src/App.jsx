@@ -1,21 +1,21 @@
-const myName = 'Utkarsh Singh Chouhan';
 
-const favProgram = 'React JS';
+import Sum from './Sum.jsx';
+import Sub from './Sub.jsx';
+import Div from './Div.jsx';
+import Mul from './Mul.jsx';
 
 
-function favYoutuber(){
-    return("David dobrik");
+function App(){
+    return (
+        <>
+        <ul>
+            <li>Sum is :{Sum(10,20)} </li>
+            <li>Sub is :{Sub(20,10)} </li>
+            <li>Div is :{Div(20,10)} </li>
+            <li>Mul is :{Mul(2,4)}  </li>
+        </ul>
+    </>
+    );
 }
 
-function favYoutuber2(){
-
-    let name1 = "Mark Rober";
-
-    return name1;
-}
-
-
-// Here we are exporting a single data, hence instead of exporting 'App' we need to write 'myname'
-export default myName;
-
-export {favProgram, favYoutuber, favYoutuber2};
+export default App;
