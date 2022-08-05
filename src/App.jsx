@@ -34,7 +34,7 @@ function App(){
 
     return (
         <h1>Hello Sir, <span style={styling}> {greeting} </span></h1>
-    );
+    )
 }
 
 export default App;
