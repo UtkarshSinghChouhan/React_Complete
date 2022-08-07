@@ -1,10 +1,12 @@
 import React from 'react';
+import './index.css'
 import Cards from './Cards.jsx';
-import cards from './Cards.jsx';
 
 function App(){
     return (
         <>
+            <h1 className='heading_style'> List of Top 5 Netflix Series </h1>
+
             <Cards imgsrc='https://i.pinimg.com/564x/9c/b0/23/9cb023a6e7ca5538813016d2c19127f3.jpg'
                 title='A Netflix Original Series'
                 seriesName='Dark'
