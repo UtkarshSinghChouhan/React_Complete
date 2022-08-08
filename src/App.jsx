@@ -14,7 +14,8 @@ function App(){
             {seriesData.map((ele, index, array) => {
 
                 return(
-                    <Cards imgsrc = {ele.imgsrc}
+                    <Cards key = {ele.id}
+                           imgsrc = {ele.imgsrc}
                            title = {ele.title}
                            seriesName = {ele.seriesName}
                            link = {ele.link}

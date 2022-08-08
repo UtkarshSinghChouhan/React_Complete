@@ -1,4 +1,5 @@
 import React from "react";
+import Images from './Images.jsx';
 
 function Cards(props){
     // console.log(props)
@@ -6,7 +7,9 @@ function Cards(props){
         <>
             <div className = "cards">
                     <div className="card">
-                        <img src={props.imgsrc} alt="" className="card__img"/>
+
+                        <Images imgsrc={props.imgsrc}/>
+                        
                         <div className="card__info">
                             <span className="card__category">{props.title}</span>
                             <h3 className="card__title">{props.seriesName}</h3>
@@ -22,3 +25,4 @@ function Cards(props){
 
 
 export default Cards;
+
