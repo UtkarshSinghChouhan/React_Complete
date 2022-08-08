@@ -1,28 +1,27 @@
 import React from 'react';
 import './index.css'
-import Cards from './Cards.jsx';
-import seriesData from './seriesData.jsx';
+import Netflix from './Netflix';
+import Amazon from './Amazon';
 
+const pick = 'amazon';
 
-console.log(seriesData[0]);
+const Choice = () => {
+    if(pick === 'netflix'){
+        return <Netflix/>;
+        
+    }
+
+    else{
+       return <Amazon/>;
+    }
+}
 
 function App(){
     return (
         <>
             <h1 className='heading_style'> List of Top 5 Netflix Series </h1>
-
-            {seriesData.map((ele, index, array) => {
-
-                return(
-                    <Cards key = {ele.id}
-                           imgsrc = {ele.imgsrc}
-                           title = {ele.title}
-                           seriesName = {ele.seriesName}
-                           link = {ele.link}
-                    />
-                )
-
-            })}
+            <Choice/>
+           
         </>
 
     );
