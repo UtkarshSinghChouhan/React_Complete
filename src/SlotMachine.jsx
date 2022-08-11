@@ -5,6 +5,10 @@ const SlotMachine = (props) => {
     //     y = '😄',
     //     z = '😄';
 
+
+    // To be more readable we can destructure the properties of the prop-object
+    // let {x, y, z} = props;
+
     if((props.x === props.y) && (props.y === props.z)){
         return(
             <>
