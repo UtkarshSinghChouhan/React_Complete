@@ -1,21 +1,22 @@
-import React from "react";
-import "./index.css";
-import SlotMachine from './SlotMachine.jsx'
+import React from 'react';
+import './index.css';
 
+let count = 0;
 
-
+const IncreCount = () => {
+    count ++;
+    console.log(count)
+    document.getElementsByClassName('heading').innerHTML = {count};
+}
+ 
 
 const App = () => {
     return(
-        <>      
-            <h1 classsName='heading_style'> 🎰Welcome to <span style={{fontWeight:'bold'}}> Slot Machine Game</span>🎰</h1>
-           <div>
-                <SlotMachine x='😄' y='😄' z='😄'/>
-                <SlotMachine x='😄' y=' 🎅 ' z='😄'/>
-                <SlotMachine x='😄' y='😄' z=' 👧 '/>
-            </div> 
+        <>
+            <h1 className='heading'> {count} </h1>
+            <button onClick={IncreCount}> Click Me </button>
         </>
     );
-};
+}
 
 export default App;
