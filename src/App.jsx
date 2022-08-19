@@ -1,22 +1,39 @@
-import React from 'react';
-import { useState } from 'react';
+import React, {useState} from "react";
 import './index.css';
 
+
+
 const App = () => {
-    let Time = new Date().toLocaleTimeString();
 
-    setInterval(function (){
-        Time = new Date().toLocaleTimeString();
-        updatetime(Time);
-    }, 1000);
+    let color = "#FAEBD7";
+    
+    let [newColor, setColor] = useState(color);
+    let [name, setName] = useState("Anitique-White");
+ 
+    const bgChanges = () => {
 
-    let [currTime, updatetime] = useState();
+        let updatedColor = "#FA8072";
+        setColor(updatedColor);
+
+        setName('Salmon-Pink');
+    }
+
+    // Double-Click or Mouse-Leave event to change the color back to normal.
+    const bgBack = () => {
+        setColor("#FAEBD7");
+        setName("Anitique-White")
+    }
+
 
     return (
         <>
-            <h1 className='heading'>{currTime}</h1>
+            <div style={{backgroundColor : newColor}}>
+                {/* <button onClick={bgChanges} onDoubleClick={bgBack}> {name} </button> */}
+                <button onMouseEnter={bgChanges} onMouseLeave={bgBack}> {name} </button>
+            </div>
         </>
     );
 }
+
 
 export default App;
