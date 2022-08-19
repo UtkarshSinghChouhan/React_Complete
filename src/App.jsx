@@ -1,16 +1,19 @@
 import React from 'react';
+import { useState } from 'react';
 import './index.css';
 
-let count = 0;
+// let count = 0;
 
-const IncreCount = () => {
-    count ++;
-    console.log(count)
-    document.getElementsByClassName('heading').innerHTML = {count};
-}
- 
+
+
 
 const App = () => {
+    const IncreCount = () => {
+        setCount(++count);
+    }
+
+    let [count, setCount] = useState(0);
+    
     return(
         <>
             <h1 className='heading'> {count} </h1>
