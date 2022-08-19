@@ -1,24 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useState } from 'react';
 import './index.css';
 
 const App = () => {
-
     let Time = new Date().toLocaleTimeString();
 
-    const [initialTime, currentTime] = useState(Time);
-
-    const updateTime = () => {
-        // Updating the value of time-string
+    setInterval(function (){
         Time = new Date().toLocaleTimeString();
+        updatetime(Time);
+    }, 1000);
 
-        // Now currentTime() method will update the 'initialTime'
-        currentTime(Time)
-    }
-    
-    return(
+    let [currTime, updatetime] = useState();
+
+    return (
         <>
-            <h1 className='heading'> {initialTime} </h1>
-            <button onClick={updateTime}> Get Time</button>
+            <h1 className='heading'>{currTime}</h1>
         </>
     );
 }
