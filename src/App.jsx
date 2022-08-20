@@ -4,24 +4,50 @@ import "./index.css";
 
 const App = () => {
 
-    let [name , setName] = useState(" ");
+    let [name , setName] = useState("");
     let [fullName , setFullName] = useState();
+
+    let [LastName , setLastName] = useState();
+    let [LastNameNew , setLastNameNew] = useState("");
+    
 
     const inputEvent = (event) => {
         setName(event.target.value);
     }
 
-    const onSubmit = () => {
-        setFullName(name);
+    const inputEventTwo = (event) => {
+        setLastName(event.target.value);
     }
 
-    return (
+    const onSubmit = (event) => {
+        event.preventDefault();
+        setFullName(name);
+        setLastNameNew(LastName);
+    }
+
+    return (   
         <>
-            <div>
-                <h1 className='heading'> Hello, {fullName} </h1>
-                <input type="text" placeholder="Enter Your Name" onChange={inputEvent}/>
-                <button onClick={onSubmit}> Click Me </button>
-            </div>
+            <form onSubmit={onSubmit}>
+                <div>
+                    <h1 className='heading'> Hello, {fullName} {LastNameNew } </h1>
+
+                    <input 
+                        type="text" 
+                        placeholder="Enter Your First Name" 
+                        onChange={inputEvent}
+                        value={name}
+                    />
+
+                    <input 
+                        type="text" 
+                        placeholder="Enter Your Last Name" 
+                        onChange={inputEventTwo}
+                        value={LastName}
+                    />
+
+                    <button type="submit"> Click to Submit 👍 </button>
+                </div>
+            </form>
         </>
     );
 }
