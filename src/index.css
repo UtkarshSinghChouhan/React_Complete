@@ -9,10 +9,10 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: aliceblue;
+  background-color: rgb(238, 159, 149);
 }
 
-#root{
+div{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,4 +25,31 @@ body{
 .heading{
   font-family: 'Roboto', sans-serif;
   font-size: 80px;
+  color: #fff;
+  text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.77);
+}
+
+input{
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  font-size: 21px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  margin: 4px 0px 30px;
+  color: rgb(88, 88, 88);
+  text-transform: capitalize;
+}
+
+button{
+  font-family: 'Roboto', sans-serif;
+  font-size: 19px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border-color: #fff;
+  background-color: rgb(238, 159, 149);
+  box-shadow: 4px 4px 5px rgba(55, 55, 55, 0.4);
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
 }

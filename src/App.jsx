@@ -1,22 +1,30 @@
 import React from 'react';
 import { useState } from 'react';
-import './index.css';
+import "./index.css";
 
 const App = () => {
-    let Time = new Date().toLocaleTimeString();
 
-    setInterval(function (){
-        Time = new Date().toLocaleTimeString();
-        updatetime(Time);
-    }, 1000);
+    let [name , setName] = useState(" ");
+    let [fullName , setFullName] = useState();
 
-    let [currTime, updatetime] = useState();
+    const inputEvent = (event) => {
+        setName(event.target.value);
+    }
+
+    const onSubmit = () => {
+        setFullName(name);
+    }
 
     return (
         <>
-            <h1 className='heading'>{currTime}</h1>
+            <div>
+                <h1 className='heading'> Hello, {fullName} </h1>
+                <input type="text" placeholder="Enter Your Name" onChange={inputEvent}/>
+                <button onClick={onSubmit}> Click Me </button>
+            </div>
         </>
     );
 }
+
 
 export default App;
