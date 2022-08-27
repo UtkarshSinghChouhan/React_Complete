@@ -1,30 +1,33 @@
-import React from 'react';
+import React from "react";
+import './index.css';
 import { useState } from 'react';
-import "./index.css";
 
 const App = () => {
 
-    let [name , setName] = useState(" ");
-    let [fullName , setFullName] = useState();
+    let [value, setValue] = useState("");
+    let [fullname, setFullname] = useState("");
 
     const inputEvent = (event) => {
-        setName(event.target.value);
+        setValue(event.target.value)
     }
 
     const onSubmit = () => {
-        setFullName(name);
+        setFullname(value);
     }
 
-    return (
+    return(
         <>
             <div>
-                <h1 className='heading'> Hello, {fullName} </h1>
-                <input type="text" placeholder="Enter Your Name" onChange={inputEvent}/>
-                <button onClick={onSubmit}> Click Me </button>
+                <h1 className="heading"> Hello {fullname}</h1>
+                <input 
+                    type="text"
+                    placeholder="Enter your Name"
+                    onChange={inputEvent}
+                />
+                <button onClick={onSubmit}> Click me </button>
             </div>
         </>
     );
 }
-
 
 export default App;
