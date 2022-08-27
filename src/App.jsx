@@ -2,19 +2,18 @@ import React from 'react';
 import { useState } from 'react';
 import './index.css';
 
-const App = () => {
-    let Time = new Date().toLocaleTimeString();
+const App = ()=> {
+    let time = new Date().toLocaleTimeString();
+    let[Time, updateTime] = useState(time);
 
-    setInterval(function (){
-        Time = new Date().toLocaleTimeString();
-        updatetime(Time);
+    setInterval(() => {
+        time = new Date().toLocaleTimeString();
+        updateTime(time);
     }, 1000);
 
-    let [currTime, updatetime] = useState();
-
-    return (
+    return(
         <>
-            <h1 className='heading'>{currTime}</h1>
+            <h1 className='heading' >{Time}</h1>
         </>
     );
 }
