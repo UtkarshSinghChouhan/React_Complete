@@ -1,39 +1,29 @@
-import React, {useState} from "react";
+import react, { useState } from 'react';
 import './index.css';
-
-
 
 const App = () => {
 
-    let color = "#FAEBD7";
-    
-    let [newColor, setColor] = useState(color);
-    let [name, setName] = useState("Anitique-White");
- 
-    const bgChanges = () => {
+    const initialColor = "#FAEBD7";
+    let [bg, setBg] = useState(initialColor);
+    let [name, setName] = useState("Antique-White");
 
-        let updatedColor = "#FA8072";
-        setColor(updatedColor);
-
-        setName('Salmon-Pink');
+    const bgChange = () => {
+        setBg("#ff91a4");
+        setName("Salmon-Pink")
     }
 
-    // Double-Click or Mouse-Leave event to change the color back to normal.
-    const bgBack = () => {
-        setColor("#FAEBD7");
-        setName("Anitique-White")
+    const backToNormal = () => {
+        setBg("#FAEBD7");
+        setName("Antique-White")
     }
 
-
-    return (
+    return(
         <>
-            <div style={{backgroundColor : newColor}}>
-                {/* <button onClick={bgChanges} onDoubleClick={bgBack}> {name} </button> */}
-                <button onMouseEnter={bgChanges} onMouseLeave={bgBack}> {name} </button>
-            </div>
+        <div style={{backgroundColor:bg}}>
+          <button onMouseEnter={bgChange} onMouseLeave={backToNormal}>{name}</button>  
+        </div>
         </>
     );
 }
-
 
 export default App;
