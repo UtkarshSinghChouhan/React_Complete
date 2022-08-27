@@ -4,45 +4,60 @@ import "./index.css";
 
 const App = () => {
 
-    let [name , setName] = useState("");
-    let [fullName , setFullName] = useState();
-
-    let [LastName , setLastName] = useState();
-    let [LastNameNew , setLastNameNew] = useState("");
+    let [fullName , setFullName] = useState({
+        fName: "",
+        lName: "",
+    });
     
 
     const inputEvent = (event) => {
-        setName(event.target.value);
-    }
 
-    const inputEventTwo = (event) => {
-        setLastName(event.target.value);
+        const value = event.target.value;
+        const name = event.target.name;
+
+        setFullName((preVal) => {
+            console.log(preVal);
+
+            if(name === "fname"){
+                return {
+                    fName: value,
+                    lName: preVal.lName
+                }
+            }
+
+            if(name === "lname"){
+                return {
+                    fName: preVal.fName,
+                    lName: value
+                }
+            }
+        });
     }
 
     const onSubmit = (event) => {
         event.preventDefault();
-        setFullName(name);
-        setLastNameNew(LastName);
     }
 
     return (   
         <>
             <form onSubmit={onSubmit}>
                 <div>
-                    <h1 className='heading'> Hello, {fullName} {LastNameNew } </h1>
+                    <h1 className='heading'> Hello, {fullName.fName} {fullName.lName}</h1>
 
                     <input 
                         type="text" 
                         placeholder="Enter Your First Name" 
                         onChange={inputEvent}
-                        value={name}
+                        name="fName"
+                        value={fullName.fName}
                     />
 
                     <input 
                         type="text" 
                         placeholder="Enter Your Last Name" 
-                        onChange={inputEventTwo}
-                        value={LastName}
+                        onChange={inputEvent}
+                        name="lName"
+                        value={fullName.lName}
                     />
 
                     <button type="submit"> Click to Submit 👍 </button>
